@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Объявления</h1>
+  <a href="{% url 'ad_create' %}">Создать новое объявление</a>
+  <ul>
+    {% for ad in ads %}
+      <li><a href="{% url 'ad_detail' ad.pk %}">{{ ad.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

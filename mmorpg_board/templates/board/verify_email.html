@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Подтверждение Email</h1>
+  <p>На вашу электронную почту был отправлен код подтверждения. Пожалуйста, введите его ниже, чтобы завершить регистрацию.</p>
+  <form method="post">
+    {% csrf_token %}
+    <label for="confirmation_code">Код подтверждения:</label>
+    <input type="text" id="confirmation_code" name="confirmation_code" required>
+    <button type="submit">Подтвердить</button>
+  </form>
+{% endblock %}

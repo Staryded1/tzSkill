@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ ad.title }}</h1>
+  <p>{{ ad.content }}</p>
+  <h2>Отклики</h2>
+  <ul>
+    {% for reply in replies %}
+      <li>{{ reply.content }} ({{ reply.author.username }})</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'ad_edit' ad.pk %}">Редактировать</a>
+{% endblock %}
